@@ -12,15 +12,33 @@ namespace MessageWall
 {
     public partial class Dashboard : Form
     {
+        BindingList<string> messages = new BindingList<string>();
         public Dashboard()
         {
             InitializeComponent();
+            WireUpLists();
         }
 
-        private void HelloWorldButton_Click(object sender, EventArgs e)
+        private void WireUpLists()
         {
-            MessageBox.Show($"Hello {firstNameText.Text}");
-            firstNameText.Text = string.Empty;
+            messageListBox.DataSource = messages;
+            //messageListBox.DisplayMember= nameof(Dashboard.Text);
+        }
+
+        private void AddMessage_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(messageText.Text))
+            {
+                //do something different
+                MessageBox.Show("Please enter a message before trying to add into the list",
+                    "Blank Message Field", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                messages.Add(messageText.Text);
+                messageText.Text = string.Empty;
+            }
+            messageText.Focus();
         }
     }
 }

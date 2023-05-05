@@ -28,62 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.firstNameLabel = new System.Windows.Forms.Label();
-            this.firstNameText = new System.Windows.Forms.TextBox();
-            this.helloWorldButton = new System.Windows.Forms.Button();
-            this.goodbyeButton = new System.Windows.Forms.Button();
+            this.messageLabel = new System.Windows.Forms.Label();
+            this.messageText = new System.Windows.Forms.TextBox();
+            this.messageListBox = new System.Windows.Forms.ListBox();
+            this.messageListBoxLabel = new System.Windows.Forms.Label();
+            this.addMessage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // firstNameLabel
+            // messageLabel
             // 
-            this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Location = new System.Drawing.Point(140, 70);
-            this.firstNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(258, 55);
-            this.firstNameLabel.TabIndex = 0;
-            this.firstNameLabel.Text = "First Name";
+            this.messageLabel.AutoSize = true;
+            this.messageLabel.Location = new System.Drawing.Point(152, 105);
+            this.messageLabel.Name = "messageLabel";
+            this.messageLabel.Size = new System.Drawing.Size(171, 42);
+            this.messageLabel.TabIndex = 0;
+            this.messageLabel.Text = "Message";
             // 
-            // firstNameText
+            // messageText
             // 
-            this.firstNameText.Location = new System.Drawing.Point(425, 70);
-            this.firstNameText.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.firstNameText.Name = "firstNameText";
-            this.firstNameText.Size = new System.Drawing.Size(531, 62);
-            this.firstNameText.TabIndex = 1;
+            this.messageText.Location = new System.Drawing.Point(330, 100);
+            this.messageText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.messageText.Name = "messageText";
+            this.messageText.Size = new System.Drawing.Size(331, 49);
+            this.messageText.TabIndex = 1;
             // 
-            // helloWorldButton
+            // messageListBox
             // 
-            this.helloWorldButton.Location = new System.Drawing.Point(37, 229);
-            this.helloWorldButton.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.helloWorldButton.Name = "helloWorldButton";
-            this.helloWorldButton.Size = new System.Drawing.Size(443, 112);
-            this.helloWorldButton.TabIndex = 2;
-            this.helloWorldButton.Text = "Hello World";
-            this.helloWorldButton.UseVisualStyleBackColor = true;
-            this.helloWorldButton.Click += new System.EventHandler(this.HelloWorldButton_Click);
+            this.messageListBox.FormattingEnabled = true;
+            this.messageListBox.ItemHeight = 42;
+            this.messageListBox.Location = new System.Drawing.Point(160, 266);
+            this.messageListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.messageListBox.Name = "messageListBox";
+            this.messageListBox.Size = new System.Drawing.Size(501, 298);
+            this.messageListBox.TabIndex = 3;
+            this.messageListBox.TabStop = false;
             // 
-            // goodbyeButton
+            // messageListBoxLabel
             // 
-            this.goodbyeButton.Location = new System.Drawing.Point(553, 229);
-            this.goodbyeButton.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.goodbyeButton.Name = "goodbyeButton";
-            this.goodbyeButton.Size = new System.Drawing.Size(457, 112);
-            this.goodbyeButton.TabIndex = 3;
-            this.goodbyeButton.Text = "Goodbye";
-            this.goodbyeButton.UseVisualStyleBackColor = true;
+            this.messageListBoxLabel.AutoSize = true;
+            this.messageListBoxLabel.Location = new System.Drawing.Point(152, 212);
+            this.messageListBoxLabel.Name = "messageListBoxLabel";
+            this.messageListBoxLabel.Size = new System.Drawing.Size(190, 42);
+            this.messageListBoxLabel.TabIndex = 0;
+            this.messageListBoxLabel.Text = "Messages";
+            // 
+            // addMessage
+            // 
+            this.addMessage.Location = new System.Drawing.Point(678, 98);
+            this.addMessage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addMessage.Name = "addMessage";
+            this.addMessage.Size = new System.Drawing.Size(98, 49);
+            this.addMessage.TabIndex = 2;
+            this.addMessage.Text = "Add";
+            this.addMessage.UseVisualStyleBackColor = true;
+            this.addMessage.Click += new System.EventHandler(this.AddMessage_Click);
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(28F, 55F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(22F, 42F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 756);
-            this.Controls.Add(this.goodbyeButton);
-            this.Controls.Add(this.helloWorldButton);
-            this.Controls.Add(this.firstNameText);
-            this.Controls.Add(this.firstNameLabel);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(906, 658);
+            this.Controls.Add(this.addMessage);
+            this.Controls.Add(this.messageListBox);
+            this.Controls.Add(this.messageText);
+            this.Controls.Add(this.messageListBoxLabel);
+            this.Controls.Add(this.messageLabel);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "Dashboard";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -93,10 +105,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label firstNameLabel;
-        private System.Windows.Forms.TextBox firstNameText;
-        private System.Windows.Forms.Button helloWorldButton;
-        private System.Windows.Forms.Button goodbyeButton;
+        private System.Windows.Forms.Label messageLabel;
+        private System.Windows.Forms.TextBox messageText;
+        private System.Windows.Forms.ListBox messageListBox;
+        private System.Windows.Forms.Label messageListBoxLabel;
+        private System.Windows.Forms.Button addMessage;
     }
 }
 
